@@ -38,10 +38,12 @@ function Review() {
   };
   const sendData = () => {
     var obj = {};
+    obj["id"] = selector[idx].id;
+    obj["title"] = selector[idx].title;
+    obj["data"] = {};
     const ips = document.querySelectorAll(".review-input");
     ips.forEach((ip, i) => {
-      if (i == 0) obj["review-type"] = ip.value;
-      else obj[ip.id] = ip.value;
+      if (i > 0) obj["data"][ip.id] = ip.value;
     });
     console.log(obj);
     set_valid(false);
