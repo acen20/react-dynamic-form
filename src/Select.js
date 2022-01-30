@@ -9,6 +9,7 @@ function Select({ selector, parent, handleForm, idx, validate }) {
           defaultValue={selector[idx].title}
           required={selector.required}
           onChange={handleForm}
+          id={selector[idx].id}
         >
           {selector.map((field) => {
             return (
@@ -22,11 +23,11 @@ function Select({ selector, parent, handleForm, idx, validate }) {
         <select
           className="review-input"
           id={selector.id}
-          defaultValue={selector.title}
+          defaultValue=""
           required={selector.required}
           onChange={validate}
         >
-          <option key={selector.title} disabled>
+          <option key={selector.title} value="" disabled>
             {selector.title}
           </option>
           {selector.options?.map((field) => {

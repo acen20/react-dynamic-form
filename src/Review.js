@@ -8,12 +8,41 @@ import "./Review.css";
 
 function Review() {
   const [idx, setIdx] = useState(0);
+  const [valid, set_valid] = useState(false);
   const selector = Data["review-types"];
+  const check_empty = (val) => {
+    var empty = true;
+    selector[val].fields.map((field) => {
+      if (field.required) {
+        empty = false;
+        return;
+      }
+    });
+    set_valid(empty);
+  };
   const handleForm = (e) => {
-    setIdx(e.target.selectedIndex);
+    const val = e.target.selectedIndex;
+    setIdx(val);
+    check_empty(val);
   };
   const validate = () => {
-    console.log("aagya");
+    var validity = true;
+    const ips = document.querySelectorAll(".review-input");
+    ips.forEach((ip) => {
+      if (!ip.value && ip.hasAttribute("required")) {
+        validity = false;
+        return;
+      }
+    });
+    if (validity) set_valid(true);
+  };
+  const sendData = () => {
+    var obj = {};
+    const ips = document.querySelectorAll(".review-input");
+    ips.forEach((ip) => {
+      obj[ip.id] = ip.value;
+    });
+    console.log(obj);
   };
   return (
     <div className="review">
@@ -34,7 +63,13 @@ function Review() {
             );
         })}
       </form>
-      <input className="submit-btn" type="submit" value="Done" disabled />
+      <input
+        className="submit-btn"
+        type="submit"
+        value="Done"
+        disabled={!valid}
+        onClick={sendData}
+      />
     </div>
   );
 }
