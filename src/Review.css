@@ -33,6 +33,9 @@ hr {
   max-height: 40vh;
   min-width: 50%;
   min-height: auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 }
 
 .review-input::selection {
