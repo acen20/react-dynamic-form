@@ -9,6 +9,7 @@ function Textarea({ field, validate }) {
         name={field.id}
         required={field.required}
         onInput={validate}
+        placeholder={field.title}
       ></textarea>
     </>
   );
