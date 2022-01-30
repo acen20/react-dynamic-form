@@ -39,10 +39,12 @@ function Review() {
   const sendData = () => {
     var obj = {};
     const ips = document.querySelectorAll(".review-input");
-    ips.forEach((ip) => {
-      obj[ip.id] = ip.value;
+    ips.forEach((ip, i) => {
+      if (i == 0) obj["review-type"] = ip.value;
+      else obj[ip.id] = ip.value;
     });
     console.log(obj);
+    set_valid(false);
   };
   return (
     <div className="review">
