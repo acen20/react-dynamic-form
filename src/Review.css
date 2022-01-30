@@ -1,0 +1,70 @@
+.review {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 5px silver;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+hr {
+  border: 1px solid whitesmoke;
+  width: 100%;
+}
+
+.input {
+}
+
+.review-input-label {
+  font-size: 12px;
+}
+
+.review-input {
+  background: whitesmoke;
+  padding: 10px 5px;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
+  max-height: 40vh;
+  min-width: 50%;
+  min-height: auto;
+}
+
+.review-input::selection {
+  border-color: blue;
+}
+
+.reviewd-input:invalid {
+  color: gray;
+}
+
+.mandatory {
+  color: crimson;
+}
+
+.submit-btn {
+  background-color: darkblue;
+  color: white;
+  padding: 8px 20px;
+  border: 0px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-btn:disabled {
+  color: grey;
+  background: silver;
+  cursor: default;
+}
+
+@media screen and (max-width: 700px) {
+  .review {
+    width: 100vw;
+  }
+}
