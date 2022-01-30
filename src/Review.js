@@ -34,7 +34,7 @@ function Review() {
         return;
       }
     });
-    if (validity) set_valid(true);
+    set_valid(validity);
   };
   const sendData = () => {
     var obj = {};
@@ -49,8 +49,8 @@ function Review() {
     set_valid(false);
   };
   return (
-    <div className="review">
-      <b>New Review</b>
+    <div className={`review ${valid && `valid`}`}>
+      <b className="form-title">New Review</b>
       <hr />
       <form className="review-form">
         <Select selector={selector} parent handleForm={handleForm} idx={idx} />
