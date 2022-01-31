@@ -65,13 +65,13 @@ function Review() {
       <form id={selector[idx].id} className="review-form">
         <Select selector={selector} parent handleForm={handleForm} idx={idx} />
         {selector[idx].fields?.map((field) => {
-          if (field.type == "select")
+          if (field.type === "select")
             return (
               <Select key={field.id} selector={field} validate={validate} />
             );
-          else if (field.type == "text")
+          else if (field.type === "text")
             return <Text key={field.id} field={field} validate={validate} />;
-          else if (field.type == "textarea")
+          else if (field.type === "textarea")
             return (
               <Textarea key={field.id} field={field} validate={validate} />
             );
