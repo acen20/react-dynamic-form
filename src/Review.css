@@ -2,7 +2,7 @@
   background: white;
   padding: 20px 30px;
   border-radius: 10px;
-  box-shadow: 0px 0px 20px silver;
+  box-shadow: 0px 0px 10px silver;
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -11,11 +11,17 @@
 }
 
 .valid {
-  box-shadow: 0px 0px 20px lightblue;
+  box-shadow: 0px 0px 10px lightblue;
 }
 
 .form-title {
   color: #000;
+}
+
+.form-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 hr {

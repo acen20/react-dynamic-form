@@ -50,9 +50,19 @@ function Review() {
   };
   return (
     <div className={`review ${valid && `valid`}`}>
-      <b className="form-title">New Review</b>
+      <div className="form-top-row">
+        <b className="form-title">New Review</b>
+        <input
+          className="submit-btn"
+          type="submit"
+          value="Done"
+          disabled={!valid}
+          onClick={sendData}
+          form={selector[idx].id}
+        />
+      </div>
       <hr />
-      <form className="review-form">
+      <form id={selector[idx].id} className="review-form">
         <Select selector={selector} parent handleForm={handleForm} idx={idx} />
         {selector[idx].fields?.map((field) => {
           if (field.type == "select")
@@ -67,13 +77,6 @@ function Review() {
             );
         })}
       </form>
-      <input
-        className="submit-btn"
-        type="submit"
-        value="Done"
-        disabled={!valid}
-        onClick={sendData}
-      />
     </div>
   );
 }
